@@ -6,8 +6,8 @@ const fixtures = {
   getImage () {
     let id = uuid.uuid()
     return {
-      description: 'an awesome picture with #tags #platzi',
-      tags: ['awesome', 'tags', 'platzi'],
+      description: 'an #awesome picture with #tags #platzi',
+      tags: [ 'awesome', 'tags', 'platzi' ],
       url: `https://platzigram.test/${uuid.v4()}.jpg`,
       likes: 0,
       liked: false,
@@ -17,7 +17,6 @@ const fixtures = {
       createdAt: new Date().toString()
     }
   },
-
   getImages (n) {
     let images = []
     while (n-- > 0) {
@@ -26,12 +25,11 @@ const fixtures = {
 
     return images
   },
-
   getUser () {
     return {
       id: uuid.uuid(),
       name: 'A random user',
-      username: 'platzigram',
+      username: `user_${uuid.v4()}`,
       createdAt: new Date().toString()
     }
   }
